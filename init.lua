@@ -1,0 +1,235 @@
+-- vim.g.mapleader = " "
+--
+-- -- vim.opt.number = false 
+-- vim.opt.relativenumber = true
+-- vim.opt.termguicolors = true
+-- vim.opt.cursorline = true
+-- vim.opt.signcolumn = "no"
+-- -- vim.opt.mouse = "a"
+-- vim.opt.clipboard = "unnamedplus"
+-- vim.opt.updatetime = 250
+-- vim.opt.tabstop = 2
+-- vim.opt.shiftwidth = 2
+-- vim.opt.softtabstop = 2
+-- vim.opt.expandtab = true
+--
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+--
+-- if not vim.uv.fs_stat(lazypath) then
+--   vim.fn.system({
+--     "git",
+--     "clone",
+--     "--filter=blob:none",
+--     "https://github.com/folke/lazy.nvim.git",
+--     "--branch=stable",
+--     lazypath,
+--   })
+-- end
+--
+-- vim.opt.rtp:prepend(lazypath)
+--
+-- require("lazy").setup({
+--   -- Theme
+--   -- {
+--   --   "rebelot/kanagawa.nvim",
+--   --   lazy = false,
+--   --   priority = 1000,
+--   --   terminalColors = false,
+--   --   config = function()
+--   --     require("kanagawa").setup({
+--   --       theme = "wave",
+--   --       transparent = false,
+--   --     })
+--   --     vim.cmd("colorscheme kanagawa")
+--   --   end,
+--   -- },
+--   --
+--
+-- {
+--     "rebelot/kanagawa.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     terminalColors = false,
+--     config = function()
+--       require("kanagawa").setup({
+--         theme = "wave",
+--         transparent = true, -- Đổi từ false thành true tại đây
+--       })
+--       vim.cmd("colorscheme kanagawa")
+--     end,
+--   },
+--   -- Icons
+--   { "nvim-tree/nvim-web-devicons", lazy = true },
+--
+--   -- Sidebar: folders and files
+--   {
+--     "nvim-neo-tree/neo-tree.nvim",
+--     branch = "v3.x",
+--     dependencies = {
+--       "nvim-lua/plenary.nvim",
+--       "MunifTanjim/nui.nvim",
+--       "nvim-tree/nvim-web-devicons",
+--     },
+--     keys = {
+--       { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
+--     },
+--     opts = {
+--       close_if_last_window = false,
+--       filesystem = {
+--         filtered_items = {
+--           hide_dotfiles = false,
+--           hide_gitignored = false,
+--         },
+--       },
+--     },
+--   },
+--
+--   -- File tabs on top
+--   {
+--     "akinsho/bufferline.nvim",
+--     version = "*",
+--     dependencies = "nvim-tree/nvim-web-devicons",
+--     opts = {
+--       options = {
+--         mode = "buffers",
+--         always_show_bufferline = true,
+--         diagnostics = "nvim_lsp",
+--         separator_style = "slant",
+--       },
+--     },
+--   },
+--
+--   -- Bottom status bar
+--   {
+--     "nvim-lualine/lualine.nvim",
+--     dependencies = "nvim-tree/nvim-web-devicons",
+--     opts = {
+--       options = {
+--         theme = "kanagawa",
+--         globalstatus = true,
+--       },
+--     },
+--   },
+--
+--   -- Search files / text
+--   {
+--     "nvim-telescope/telescope.nvim",
+--     branch = "0.1.x",
+--     dependencies = { "nvim-lua/plenary.nvim" },
+--     keys = {
+--       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+--       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search text" },
+--       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
+--     },
+--   },
+--
+--   -- Better syntax highlighting
+--   {
+--     "nvim-treesitter/nvim-treesitter",
+--     lazy = false,
+--     build = ":TSUpdate",
+--     config = function()
+--       local treesitter = require("nvim-treesitter")
+--
+--       treesitter.setup({
+--         install_dir = vim.fn.stdpath("data") .. "/site",
+--       })
+--
+--       treesitter.install({
+--         "bash",
+--         "css",
+--         "html",
+--         "javascript",
+--         "json",
+--         "lua",
+--         "markdown",
+--         "python",
+--         "tsx",
+--         "typescript",
+--       })
+--     end,
+--   },
+--
+--   -- Install and manage language servers
+--   { "mason-org/mason.nvim", opts = {} },
+--
+--   {
+--     "mason-org/mason-lspconfig.nvim",
+--     dependencies = {
+--       "mason-org/mason.nvim",
+--       "neovim/nvim-lspconfig",
+--     },
+--     opts = {
+--       ensure_installed = {
+--         "lua_ls",
+--         "pyright",
+--         "ts_ls",
+--         "jsonls",
+--         "bashls",
+--       },
+--       automatic_enable = true,
+--     },
+--   },
+--
+--   -- Autocomplete
+--   {
+--     "saghen/blink.cmp",
+--     version = "1.*",
+--     opts = {
+--       keymap = { preset = "default" },
+--       appearance = {
+--         nerd_font_variant = "mono",
+--       },
+--       completion = {
+--         documentation = {
+--           auto_show = true,
+--         },
+--       },
+--       sources = {
+--         default = { "lsp", "path", "snippets", "buffer" },
+--       },
+--       fuzzy = {
+--         implementation = "lua",
+--       },
+--     },
+--   },
+-- })
+--
+-- vim.keymap.set("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit Neovim" })
+-- vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous tab" })
+-- vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next tab" })
+--
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(event)
+--     local map = function(keys, command, description)
+--       vim.keymap.set("n", keys, command, {
+--         buffer = event.buf,
+--         desc = description,
+--       })
+--     end
+--
+--     map("gd", vim.lsp.buf.definition, "Go to definition")
+--     map("gr", vim.lsp.buf.references, "References")
+--     map("K", vim.lsp.buf.hover, "Documentation")
+--     map("<leader>rn", vim.lsp.buf.rename, "Rename")
+--     map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+--   end,
+-- })
+
+
+-- Load các cấu hình cơ bản trước
+require("config.options")
+require("config.keymaps")
+
+-- Bootstrap lazy.nvim (giữ nguyên đoạn code clone lazy của bạn)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Lazy sẽ TỰ ĐỘNG quét thư mục lua/plugins/ và load mọi file trong đó
+require("lazy").setup("plugins")
