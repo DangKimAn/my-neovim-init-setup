@@ -36,8 +36,15 @@ return {
           -- Nếu phát hiện cửa sổ đó là neo-tree
           if vim.bo[buf].filetype == "neo-tree" then
             -- Ép neo-tree nhảy sang tận cùng bên trái và chiếm full chiều cao (wincmd H)
+            --
+            --
+            --
+            -- vim.api.nvim_win_call(win, function()
+            --   vim.cmd("wincmd H")
+            -- end)
             vim.api.nvim_win_call(win, function()
               vim.cmd("wincmd H")
+              vim.cmd("vertical resize 35") -- Thêm dòng này để ép lại chiều rộng nhỏ gọn
             end)
           end
         end

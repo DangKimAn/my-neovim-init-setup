@@ -19,6 +19,10 @@ This is my Neovim setup. You need to install some tools to use it on Ubuntu.
 **How to open:** In Neovim, press `Space` + `g` + `g`.
 ![demo lazygit](demo_lazygit.png)
 
+### Picture 4: Agent
+**How to open:** In Neovim, press `Space` + `a` + `a` -> `Enter`.
+![demo agent](demo_agent.png)
+
 
 ## How to Install on Ubuntu
 
